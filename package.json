@@ -1,0 +1,22 @@
+{
+  "name": "mesh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "three": "^0.95.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.16.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\\"
+  },
+  "author": "",
+  "license": "ISC"
+}
