@@ -157,12 +157,21 @@ var saveButton = document.createElement('button');
 saveButton.className = 'save';
 saveButton.innerHTML = 'Save';
 document.body.appendChild(saveButton);
+var a = document.createElement("a");
+document.body.appendChild(a);
+a.style = "display: none";
 
 saveButton.onclick = function(e) {
     e.preventDefault();
-    var save = new THREE.OBJExporter();
-    var parse = save.parse( curModel );
-    console.log(parse);
+    var save = new THREE.STLExporter();
+    var parse = save.parse( curModel, {binary: true});
+    var blob = new Blob([parse], { type : 'application/octet-stream'});
+    var url = window.URL.createObjectURL(blob);
+    var fileName = "obj.stl";
+    a.href = url;
+    a.download = fileName;
+    a.click();
+    window.URL.revokeObjectURL(url);
 }
 
 function render() {
